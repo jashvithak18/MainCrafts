@@ -1,0 +1,30 @@
+### GET ALL PRODUCTS
+GET http://localhost:5000/api/products
+
+### GET SINGLE PRODUCT
+GET http://localhost:5000/api/products/69fed9aba2a714aca3623c1c
+
+### CREATE PRODUCT
+POST http://localhost:5000/api/products
+Content-Type: application/json
+
+{
+  "name": "Laptop",
+  "price": 55000,
+  "description": "Gaming laptop"
+}
+
+
+### UPDATE PRODUCT
+PUT http://localhost:5000/api/products/69fed9aba2a714aca3623c1c
+Content-Type: application/json
+
+{
+  "name": "Updated Laptop",
+  "price": 60000,
+  "description": "Updated description"
+}
+
+
+### DELETE PRODUCT
+DELETE http://localhost:5000/api/products/69fed9aba2a714aca3623c1c

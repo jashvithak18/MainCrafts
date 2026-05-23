@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-const API = 'http://localhost:5000/api';
+const API = 'https://todolist-6bfr.onrender.com/api';
 export default function App() {
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState('');

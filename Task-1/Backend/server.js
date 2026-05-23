@@ -10,7 +10,7 @@ app.use(exp.json());
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/t1db")
   .then(() => console.log("DB connected successfully"))
-  .catch((err) => console.error("❌ MongoDB error:", err));
+  .catch((err) => console.error(" MongoDB error:", err));
 
 // GET all products
 app.get("/api/products", async (req, res) => {

@@ -46,108 +46,123 @@ function App() {
   <div
     style={{
       minHeight: "100vh",
-      background: "#f5f7fb",
+      background: "linear-gradient(135deg,#eef2ff,#f8fafc)",
       padding: "40px",
-      display: "flex",
-      justifyContent: "center",
+      boxSizing: "border-box",
     }}
   >
     <div
       style={{
         width: "100%",
-        maxWidth: "700px",
+        minHeight: "calc(100vh - 80px)",
         background: "#fff",
-        padding: "30px",
-        borderRadius: "20px",
-        boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+        borderRadius: "24px",
+        padding: "40px",
+        boxShadow: "0 10px 40px rgba(0,0,0,0.08)",
+        boxSizing: "border-box",
       }}
     >
       <h1
         style={{
           textAlign: "center",
-          color: "#333",
-          marginBottom: "25px",
+          fontSize: "48px",
+          marginBottom: "30px",
+          color: "#1e293b",
         }}
       >
-        ✨ Task Manager
+        🗒️ ToDo List
       </h1>
 
       <div
         style={{
           display: "flex",
-          gap: "10px",
-          marginBottom: "20px",
+          gap: "15px",
+          marginBottom: "30px",
         }}
       >
         <input
           type="text"
-          placeholder="Add a task..."
+          placeholder="Enter a new task..."
           value={text}
           onChange={(e) => setText(e.target.value)}
           style={{
             flex: 1,
-            padding: "12px",
-            borderRadius: "10px",
-            border: "1px solid #ddd",
-            fontSize: "16px",
+            padding: "16px",
+            borderRadius: "12px",
+            border: "1px solid #d1d5db",
+            fontSize: "18px",
+            outline: "none",
           }}
         />
 
         <button
           onClick={addTask}
           style={{
-            padding: "12px 20px",
+            padding: "16px 24px",
             border: "none",
-            borderRadius: "10px",
+            borderRadius: "12px",
             background: "#4f46e5",
             color: "white",
+            fontSize: "16px",
             cursor: "pointer",
+            fontWeight: "bold",
           }}
         >
-          Add
+          Add Task
         </button>
       </div>
 
       {tasks.length === 0 ? (
-        <p style={{ textAlign: "center", color: "#777" }}>
-          No tasks yet 🚀
-        </p>
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "100px",
+            color: "#94a3b8",
+            fontSize: "22px",
+          }}
+        >
+          No tasks yet 
+        </div>
       ) : (
         tasks.map((task) => (
           <div
             key={task._id}
             style={{
               display: "flex",
-              alignItems: "center",
               justifyContent: "space-between",
-              padding: "15px",
-              marginBottom: "12px",
-              background: "#fafafa",
-              borderRadius: "12px",
-              border: "1px solid #eee",
+              alignItems: "center",
+              background: "#f8fafc",
+              padding: "18px",
+              marginBottom: "15px",
+              borderRadius: "14px",
+              border: "1px solid #e2e8f0",
             }}
           >
             <div
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "10px",
+                gap: "15px",
               }}
             >
               <input
                 type="checkbox"
                 checked={task.completed}
                 onChange={() => toggleCompleted(task)}
+                style={{
+                  width: "18px",
+                  height: "18px",
+                }}
               />
 
               <span
                 style={{
+                  fontSize: "18px",
+                  color: "#334155",
                   textDecoration: task.completed
                     ? "line-through"
                     : "none",
-                  color: task.completed
-                    ? "#999"
-                    : "#333",
+                  opacity: task.completed ? 0.6 : 1,
                 }}
               >
                 {task.text}
@@ -157,7 +172,7 @@ function App() {
             <div
               style={{
                 display: "flex",
-                gap: "8px",
+                gap: "10px",
               }}
             >
               <button
@@ -166,10 +181,12 @@ function App() {
                 }
                 style={{
                   background: "#fbbf24",
+                  color: "#000",
                   border: "none",
-                  padding: "8px 12px",
-                  borderRadius: "8px",
+                  padding: "10px 16px",
+                  borderRadius: "10px",
                   cursor: "pointer",
+                  fontWeight: "600",
                 }}
               >
                 Edit
@@ -183,9 +200,10 @@ function App() {
                   background: "#ef4444",
                   color: "white",
                   border: "none",
-                  padding: "8px 12px",
-                  borderRadius: "8px",
+                  padding: "10px 16px",
+                  borderRadius: "10px",
                   cursor: "pointer",
+                  fontWeight: "600",
                 }}
               >
                 Delete

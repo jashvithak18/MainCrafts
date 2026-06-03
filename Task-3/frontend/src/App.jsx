@@ -43,64 +43,160 @@ function App() {
   };
 
   return (
-    <div style={{ padding: "30px" }}>
-      <h1>Todo App</h1>
+  <div
+    style={{
+      minHeight: "100vh",
+      background: "#f5f7fb",
+      padding: "40px",
+      display: "flex",
+      justifyContent: "center",
+    }}
+  >
+    <div
+      style={{
+        width: "100%",
+        maxWidth: "700px",
+        background: "#fff",
+        padding: "30px",
+        borderRadius: "20px",
+        boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+      }}
+    >
+      <h1
+        style={{
+          textAlign: "center",
+          color: "#333",
+          marginBottom: "25px",
+        }}
+      >
+        ✨ Task Manager
+      </h1>
 
-      <input
-        type="text"
-        placeholder="Enter task"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-
-      <button onClick={addTask}>
-        Add
-      </button>
-
-      {tasks.map((task) => (
-        <div
-          key={task._id}
+      <div
+        style={{
+          display: "flex",
+          gap: "10px",
+          marginBottom: "20px",
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Add a task..."
+          value={text}
+          onChange={(e) => setText(e.target.value)}
           style={{
-            display: "flex",
-            gap: "10px",
-            marginTop: "10px",
+            flex: 1,
+            padding: "12px",
+            borderRadius: "10px",
+            border: "1px solid #ddd",
+            fontSize: "16px",
+          }}
+        />
+
+        <button
+          onClick={addTask}
+          style={{
+            padding: "12px 20px",
+            border: "none",
+            borderRadius: "10px",
+            background: "#4f46e5",
+            color: "white",
+            cursor: "pointer",
           }}
         >
-          <input
-            type="checkbox"
-            checked={task.completed}
-            onChange={() => toggleCompleted(task)}
-          />
+          Add
+        </button>
+      </div>
 
-          <span
+      {tasks.length === 0 ? (
+        <p style={{ textAlign: "center", color: "#777" }}>
+          No tasks yet 🚀
+        </p>
+      ) : (
+        tasks.map((task) => (
+          <div
+            key={task._id}
             style={{
-              textDecoration: task.completed
-                ? "line-through"
-                : "none",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "15px",
+              marginBottom: "12px",
+              background: "#fafafa",
+              borderRadius: "12px",
+              border: "1px solid #eee",
             }}
           >
-            {task.text}
-          </span>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+              }}
+            >
+              <input
+                type="checkbox"
+                checked={task.completed}
+                onChange={() => toggleCompleted(task)}
+              />
 
-          <button
-            onClick={() =>
-              updateTask(task._id, task.text)
-            }
-          >
-            Edit
-          </button>
+              <span
+                style={{
+                  textDecoration: task.completed
+                    ? "line-through"
+                    : "none",
+                  color: task.completed
+                    ? "#999"
+                    : "#333",
+                }}
+              >
+                {task.text}
+              </span>
+            </div>
 
-          <button
-            onClick={() =>
-              deleteTask(task._id)
-            }
-          >
-            Delete
-          </button>
-        </div>
-      ))}
+            <div
+              style={{
+                display: "flex",
+                gap: "8px",
+              }}
+            >
+              <button
+                onClick={() =>
+                  updateTask(task._id, task.text)
+                }
+                style={{
+                  background: "#fbbf24",
+                  border: "none",
+                  padding: "8px 12px",
+                  borderRadius: "8px",
+                  cursor: "pointer",
+                }}
+              >
+                Edit
+              </button>
+
+              <button
+                onClick={() =>
+                  deleteTask(task._id)
+                }
+                style={{
+                  background: "#ef4444",
+                  color: "white",
+                  border: "none",
+                  padding: "8px 12px",
+                  borderRadius: "8px",
+                  cursor: "pointer",
+                }}
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        ))
+      )}
     </div>
-  );
+  </div>
+);
 }
 
 export default App;

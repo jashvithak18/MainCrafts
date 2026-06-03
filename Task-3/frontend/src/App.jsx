@@ -3,7 +3,7 @@ import axios from "axios";
 function App() {
   const [tasks, setTasks] = useState([]);
   const [text, setText] = useState("");
-  const API = " https://maincrafts-5.onrender.com";
+  const API = " https://maincrafts-5.onrender.com/api";
   const fetchTasks = async () => {
     const res = await axios.get(`${API}/tasks`);
     setTasks(res.data);

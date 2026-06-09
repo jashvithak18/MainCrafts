@@ -1,16 +1,16 @@
 :root {
-  --bg-gradient: radial-gradient(circle at top left, #0e121a, #07090e);
-  --accent-color: #5b21b6;
-  --accent-glow: rgba(124, 58, 237, 0.4);
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --card-border: rgba(255, 255, 255, 0.06);
-  --text-main: #f3f4f6;
-  --text-muted: #9ca3af;
-  --input-bg: rgba(255, 255, 255, 0.04);
-  --input-border: rgba(255, 255, 255, 0.08);
-  --input-focus-border: #8b5cf6;
-  --btn-gradient: linear-gradient(135deg, #7c3aed, #4f46e5);
-  --btn-hover-gradient: linear-gradient(135deg, #8b5cf6, #6366f1);
+  --bg-gradient: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  --accent-color: #4f46e5;
+  --accent-glow: rgba(79, 70, 229, 0.12);
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --card-border: rgba(15, 23, 42, 0.06);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --input-focus-border: #6366f1;
+  --btn-gradient: linear-gradient(135deg, #4f46e5, #3b82f6);
+  --btn-hover-gradient: linear-gradient(135deg, #4338ca, #2563eb);
   --danger-color: #ef4444;
   --success-color: #10b981;
 }
@@ -42,7 +42,7 @@ body {
   border-radius: 1.25rem;
   width: 100%;
   max-width: 420px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
   animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -65,7 +65,7 @@ body {
 .auth-header h1 {
   font-size: 2rem;
   font-weight: 700;
-  background: linear-gradient(to right, #c084fc, #818cf8);
+  background: linear-gradient(to right, #1e293b, #4f46e5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
@@ -104,8 +104,8 @@ body {
 
 .form-input:focus {
   border-color: var(--input-focus-border);
-  box-shadow: 0 0 12px var(--accent-glow);
-  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 4px var(--accent-glow);
+  background: #ffffff;
 }
 
 .auth-btn {
@@ -125,7 +125,7 @@ body {
 .auth-btn:hover {
   background: var(--btn-hover-gradient);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px var(--accent-glow);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.2);
 }
 
 .auth-btn:active {
@@ -140,7 +140,7 @@ body {
 }
 
 .auth-link {
-  color: #c084fc;
+  color: #4f46e5;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
@@ -148,7 +148,7 @@ body {
 }
 
 .auth-link:hover {
-  color: #d8b4fe;
+  color: #4338ca;
   text-decoration: underline;
 }
 
@@ -173,15 +173,15 @@ body {
 }
 
 .alert-danger {
-  background: rgba(239, 68, 68, 0.12);
-  border: 1px solid rgba(239, 68, 68, 0.25);
-  color: #fca5a5;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
 }
 
 .alert-success {
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  color: #a7f3d0;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
 }
 
 /* Dashboard Styles */
@@ -194,7 +194,7 @@ body {
   border-radius: 1.5rem;
   width: 100%;
   max-width: 500px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
   text-align: center;
   animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -211,12 +211,12 @@ body {
   font-weight: 700;
   color: #ffffff;
   margin: 0 auto 1.5rem;
-  box-shadow: 0 8px 20px var(--accent-glow);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
 }
 
 .info-group {
-  background: rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(15, 23, 42, 0.02);
+  border: 1px solid rgba(15, 23, 42, 0.04);
   border-radius: 0.75rem;
   padding: 1.25rem;
   margin-bottom: 1.5rem;
@@ -231,7 +231,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.04);
 }
 
 .info-item:last-child {
@@ -256,10 +256,10 @@ body {
 .logout-btn {
   width: 100%;
   padding: 0.85rem;
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.25);
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.18);
   border-radius: 0.75rem;
-  color: #fca5a5;
+  color: #dc2626;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -268,8 +268,8 @@ body {
 }
 
 .logout-btn:hover {
-  background: rgba(239, 68, 68, 0.18);
-  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
   transform: translateY(-2px);
 }
 
